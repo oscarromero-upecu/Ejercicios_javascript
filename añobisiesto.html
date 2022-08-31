@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Año bisiesto</title>
+</head>
+<body>
+    <ul>
+        <li>Crear una función que imprima si un año(parámetro) es un año bisiesto o no.</li>
+    </ul>
+    <hr>
+    <form action="">
+        <input type="text" id="anio" placeholder="Ingrese el año" size="15">
+        <input type="button" value="Bisiesto" onclick="alert( bisiesto() );">
+    </form>
+   
+    <script>
+        //funcion
+        var bisiesto = function(){
+            var anio= parseInt(document.getElementById("anio").value);
+            if(anio>1900 && anio<2050){
+                if  (((anio%4==0) && (anio%100!=0))||(anio%400==0)){
+                    return  (anio + ' Es año bisiesto');
+                }else
+                    return  (anio + ' No es año bisiesto');
+            }
+            return  (' Ingres un año correcto');
+        }   
+    </script>
+</body>
+</html>

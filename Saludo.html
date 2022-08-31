@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nombre de Usuario con saludo</title>
+</head>
+<body>
+    <ul>
+        <li>Crear un programa que pida el nombre al usuario y los salude. La primera letra del nombre al saludar siempre debe estar en mayúsculas y el resto en minúsculas, sin importar la forma en la que el usuario ingresó su nombre.</li>
+    </ul>
+    <hr>
+    <form>
+        <input type="text"  id="Nombre" placeholder="Ingrese su nombre" size="30">
+        <input type="button" value="Varificar Texto" onclick="alert( saludo() );">
+    </form>
+
+    <script>
+        var saludo = function(){
+            var texto = document.getElementById("Nombre").value.toLowerCase();
+            var mayuscula = texto[0].toUpperCase();
+            var nombre = mayuscula+texto.substring(1);
+            return ('Hola que tal ' + nombre);
+        }
+    </script>
+</body>
+</html>

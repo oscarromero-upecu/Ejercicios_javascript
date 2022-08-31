@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limites de caracteres</title>
+</head>
+<body>
+    <ul>
+        <li>Crear un programa que reciba un texto del usuario y le diga cuántos caracteres ha escrito y cuantos le faltan para llegar a 280 caracteres (limite en Twitter).</li>
+    </ul>
+    <hr>
+    <form>
+        <input type="text"  id="Frase" placeholder="Ingresa su twitter" size="50">
+        <input type="button" value="Varificar Texto" onclick="alert( caracteres() );">
+    </form>
+
+    <script>
+        var caracteres = function(){
+            var texto = document.getElementById("Frase").value;
+            var caracterUsuario  = texto.length;
+            if (caracterUsuario < 280){
+                var caracterpendiente = 280-caracterUsuario;
+                return ('Tienes pendiente '+ caracterpendiente +' caracteres');
+            }
+            return('Supero el numero de caracteres permitidos');
+        }
+    </script>
+</body>
+</html>

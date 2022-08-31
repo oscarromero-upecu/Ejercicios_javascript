@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secuancia de Finonacci</title>
+</head>
+<body>
+    <ul>
+        <li>Crear un programa que tenga una función que genere una secuencia de Fibonacci empezando con 0 y agregando cada valor a un arreglo. El parámetro de la función es la cantidad de números que se va a agregar al arreglo.</li>
+    </ul>
+    <hr>
+    <form action="">
+        <input type="number" id="numero" placeholder="cantidad de arreglo" size="15">
+        <input type="button" value="Finonacci" onclick="alert( Finonacci(2) );">
+    </form>
+   
+    <script>
+        //funcion
+        var Finonacci = function(numero){
+            var numero= document.getElementById("numero").value;
+            if(numero>1){
+                a=0;
+                b=1;
+                fibonacci =[]
+                for  (var i = 2; i<=numero; i++){
+                    res = a+b;
+                    a=b;
+                    b=res;
+                }
+                return res; 
+            }else             
+            return  (' Ingres un numero correcto');
+        }   
+
+    </script>
+</body>
+</html>
