@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+</head>
+<body>
+    <button id="boton">Boton</button>
+    <input type="text" id="input" placeholder="accion">
+
+    <script>
+        // funcion autoinvocada para proteger las variables ente ()
+        (function(){
+            var saludo= function(e){
+                // type tipo de evento / target a donde se esta aplicando el evento
+                alert('Este evento es de tipo: '+ e.target);
+            };
+            // var saludo = function ( ) {
+            //     console.log ( ' Hola mijo lindo ' ) ;
+            // } ;
+            /* hay 3 tipos de modelos de eventos basico/standar/inernetexplorer*/
+            var boton = document.getElementById('boton');
+            // agregamos evento standar
+            //addEventListener 2 parametros(tipo de evento,que va a ejecutar)
+            boton.addEventListener("click", saludo);
+            // boton.addEventListener("click", saludo2);
+            // remover evento
+            // boton.removeEventListener("click", saludo)
+        }())
+    </script>
+</body>
+</html>

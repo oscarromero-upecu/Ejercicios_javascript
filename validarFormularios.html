@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+</head>
+<body>
+    <form action = "" name = "formulario" method = "get" >
+        <!--Required es una validacion de que debe llenar el espacio-->
+        <input type = "text" name = "nombre" id = "nombre" maxlength = "30" placeholder = "Nombre :" >
+        <br>
+        <input type = "radio" name = "sexo" id = "hombre" value = "Hombre" > Hombre
+        <input type = "radio" name = "sexo" id = "mujer" value = "Mujer"  > Mujer
+        <br>
+        <input type = "checkbox" name = "terminos" id = "terminos"  > Terminos y Condiciones
+        <br>
+        <input type = "submit" id = "btn" name = "btn" value = "Enviar" >
+    </form > 
+
+    <script>
+
+        //VALIDACIONES DE CAMPOs QUE ESTEN LLENOS
+        (function(){
+            //1) variable
+            //1) accedemos al formulario por nombre[o] el primero
+            var formulario = document.getElementsByName('formulario')[0];
+                // accedemos a los elementos
+                elementos = formulario.elements,
+                boton = document.getElementById('btn');
+
+            //3) validar el campo nombre
+            var validarNombre= function(e){
+                // condicional que accede al al valor que esta dentro del input de nombre
+                // despues se conprueba que el valor no sea igual a 0
+                if(formulario.nombre.value == 0){
+                    alert("Completa el campo nombre");
+                    // para prevenir que se este acutalizando la pagina o se envien los datos
+                    e.preventDefault();
+                }
+            }
+
+            //4) fucion que ejecuta mas funciones con parametro e
+            var validar = function(e){
+                validarNombre (e);
+                validarRadio(e);
+                validarCheckbox(e);
+            }
+
+            //5) validar los rdioboton
+            var validarRadio = function(e){
+                //accede al input radio el primero [0]
+                //.checked confirma si fue selecionado
+                if (formulario.sexo[0].checked == true || formulario.sexo[1].checked == true){
+                } else
+                    alert("Completa el campo sexo");
+                    // para prevenir que se este acutalizando la pagina o se envien los datos
+                    e.preventDefault();
+            }
+
+            //6) Validar Checkbox
+            var validarCheckbox = function(e){
+                //condicioanl que accede al check y consulta si fue seleccionado
+                if(formulario.terminos.checked == true){
+                }else
+                alert("Completa el campo terminos");
+                    // para prevenir que se este acutalizando la pagina o se envien los datos
+                    e.preventDefault();
+            }
+            
+            //2) agregamos el evento submit y queremos que acceda a la funcion validar
+            formulario.addEventListener("submit", validar);
+            
+        }())
+        
+    </script>
+</body>
+</html>

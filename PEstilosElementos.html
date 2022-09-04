@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- C -->
+    <title>Modificando Estilos de los Elementos</title>
+    <!-- CSS -->
+    <style>
+        /* pequeno */
+        .thumb{
+            width: 200px;
+            transition: 300ms all ease;
+        }
+        
+        .grande {
+            width: 400px;
+        }
+            </style>
+</head>
+<body>
+    <form action="">
+        <!-- Boton que al presionar click se va a ejecutar una funcion -->
+        <input type="button" value="Cambio de tamano" onclick="zoom();">
+    </form>   
+
+     <!-- imagen -->
+    <img id="thumb" class="thumb" src="recetas-de-pasteles.jpg"
+    width="400">
+
+    <script>
+        var zoom = function(){
+            // accedemos a nuestra imagen
+            var thumb = document.getElementById("thumb");
+            // ponemos un condicional para confirmar si podemos hacer grande a nuestra imagen
+            if (thumb.className=="thumb"){
+                // cambiamos el tamano con setAttribute o className
+                // thumb.setAttribute("class","thumb grande");
+                thumb.className="thumb grande";
+            }else
+            thumb.className="thumb";
+
+
+        }
+    </script>
+</body>
+</html>
